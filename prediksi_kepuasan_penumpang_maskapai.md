@@ -12,8 +12,6 @@ Dengan perkembangan teknologi yang semakin cepat, perusahaan dapat menggunakan t
 
 Proyek ini bertujuan untuk mengembangkan sebuah model machine learning yang dapat mengklasifikasikan kepuasan dan ketidakpuasan penumpang maskapai. Data-data yang digunakan meliputi beberapa layanan yang disediakan oleh maskapai, seperti pelayanan kabin, pelayanan makanan, penanganan bagasi, dan lain sebagainya. Dengan model machine learning yang dikembangkan, perusahaan maskapai penerbangan dapat memahami kepuasan pelanggan dan meningkatkan kualitas layanan yang diberikan.
 
-Referensi: Harjati, L., & Venesia, Y. (2015). [Pengaruh kualitas layanan dan persepsi harga terhadap kepuasan pelanggan pada maskapai penerbangan Tiger Air Mandala](http://download.garuda.kemdikbud.go.id/article.php?article=400299&val=6685&title=PENGARUH%20KUALITAS%20LAYANAN%20DAN%20PERSEPSI%20HARGA%20TERHADAP%20KEPUASAN%20PELANGGAN%20PADA%20MASKAPAI%20PENERBANGAN%20TIGER%20AIR%20MANDALA). E-Journal Widya Ekonomika, 1(1), 36791.
-
 ## Business Understanding
 
 ### Problem Statements
@@ -22,7 +20,7 @@ Dari latar belakang di atas, proyek ini akan menjawab beberapa pertanyaan beriku
 
 - Model machine learning apa yang paling baik dari algoritma K-Nearest Neighbors, Random Forest, dan CatBoost dalam mengklasifikasikan kepuasan penumpang?
 - Apakah layanan Inflight Wifi Service, Seat Comfort, dan Inflight Entertainment berkontribusi terhadap klasifikasi kepuasan penumpang?
-- Bagaimana cara meningkatkan kualitas layanan maskapai penerbangan berdasarkan hasil klasifikasi kepuasan penumpang?
+- Bagaimana langkah yang dapat diambil oleh maskapai untuk meningkatkan kualitas layanan maskapai penerbangan berdasarkan hasil klasifikasi kepuasan penumpang?
 
 ### Goals
 
@@ -227,15 +225,7 @@ Model yang digunakan pada proyek ini adalah algoritma K-Nearest Neighbors, Rando
 | Random Forest | Algoritma klasifikasi berbasis ensemble learning yang menggunakan decision tree | - Tahan terhadap data noise <br> - Memiliki akurasi yang sangat tinggi karena menggunakan pendekatan gabungan Decision Tree <br> | - Komputasi yang sangat kompleks <br> - Tidak dapat menghasilkan model yang mudah diinterpretasi |
 | CatBoost | Algoritma klasifikasi berbasis gradient boosting yang menggunakan decision tree | - Sangat efisien untuk mengatur data kategorikal tanpa perlu encoding <br> - Mengimplementasikan beberapa teknik untuk mencegah overfitting | - Menghasilkan model yang cukup besar |
 
-Ketiga model tersebut dilatih tanpa tuning parameter dan menggunakan data yang sudah dipersiapkan dengan proporsi 80:20. Dari hasil training, dihasilkan model yang memiliki performa sebagai berikut:
-
-| Model | Akurasi Train | Akurasi Test | Precision Train | Precision Test |
-|-------|---------------|--------------|-----------------|----------------|
-| K-Nearest Neighbors | 0.80 | 0.70 | 0.79 | 0.69 |
-| Random Forest | 1.0 | 0.96 | 1.0 | 0.97 |
-| CatBoost | 0.97 | 0.97 | 0.98 | 0.98 |
-
-Dari hasil perhitungan metrik evaluasi pada tabel di atas, dapat dilihat bahwa model CatBoost memiliki performa yang paling baik dibandingkan dengan model K-Nearest Neighbors dan Random Forest. Model CatBoost memiliki _accuracy_ dan _precision_ yang lebih tinggi, yaitu 0.97 dan 0.98.
+Ketiga model tersebut dilatih dengan menggunakan parameter default yang sudah ditentukan pada library `scikit-learn` dan menggunakan data yang sudah dipersiapkan dengan proporsi 80:20.
 
 ## Evaluation
 
@@ -317,7 +307,18 @@ Jika berdasarkan classification report, maka dihasilkan nilai sebagai berikut:
 | CatBoost | 0 | 0.96 | 0.97 |
 | | 1 | 0.98 | |
 
-Dari hasil evaluasi, dapat disimpulkan bahwa model CatBoost memiliki performa yang paling baik dibandingkan dengan model K-Nearest Neighbors dan Random Forest. CatBoost juga merupakan model yang fleksibel dan dapat menangani data kategorikal tanpa perlu encoding. Model tersebut melakukan konversi data kategorikal menjadi data numerik secara otomatis menggunakan algoritma novel yang membantu dalam mengurangi overfitting. Selain itu, model CatBoost mengimplementasikan mekanisme boosting, yaitu teknik mengatasi masalah overfitting dengan mengacak urutan data pada setiap iterasi pelatihan, sehingga model tidak akan terlalu fokus pada data yang sama[2]. Hal ini membuat model CatBoost cocok untuk digunakan dalam memprediksi kepuasan penumpang dengan tepat meskipun data yang diperoleh sangat besar dan beragam.
+Dari hasil pemodelan, dapat disimpulkan bahwa model CatBoost memiliki performa yang paling baik dibandingkan dengan model K-Nearest Neighbors dan Random Forest. CatBoost juga merupakan model yang fleksibel dan dapat menangani data kategorikal tanpa perlu encoding. Model tersebut melakukan konversi data kategorikal menjadi data numerik secara otomatis menggunakan algoritma novel yang membantu dalam mengurangi overfitting. Selain itu, model CatBoost mengimplementasikan mekanisme boosting, yaitu teknik mengatasi masalah overfitting dengan mengacak urutan data pada setiap iterasi pelatihan, sehingga model tidak akan terlalu fokus pada data yang sama[2]. Hal ini membuat model CatBoost cocok untuk digunakan dalam memprediksi kepuasan penumpang dengan tepat meskipun data yang diperoleh sangat besar dan beragam.
+
+![important_feature](assets/important_feature.png)
+
+Merujuk kepada gambar di atas, fitur-fitur yang menjadi penentu kepuasan penumpang adalah *Inflight wifi service*, *Type of Travel*, *Online Boarding*, dan *Customer Type*. Perusahaan maskapai dapat memperhatikan fitur-fitur tersebut untuk mempertahankan atau meningkatkan kepuasan pelanggan. Selain itu, perusahaan dapat memberikan perbaikan pada fitur-fitur lain yang memiliki kontribusi rendah terhadap kepuasan penumpang.
+
+Perusahaan dapat mengambil langkah-langkah berikut untuk meningkatkan kualitas layanan:
+
+1. Maskapai dapat meningkatkan kualitas pada layanan yang memiliki kontribusi yang signifikan. Misalnya pada layanan *Inflight wifi service*, maskapai dapat meningkatkan kualitas layanan wifi dengan meningkatkan kecepatan internet dan ketersediaan wifi selama penerbangan.
+2. Maskapai dapat memberikan layanan yang lebih baik pada pelanggan yang melakukan perjalanan bisnis. Misalnya dengan memberikan fasilitas khusus untuk pelanggan bisnis, seperti ruang tunggu khusus, prioritas boarding, dan lain sebagainya.
+3. Maskapai dapat meningkatkan kualitas layanan online boarding dengan mengimplementasikan teknologi yang lebih mutakhir untuk mengurangi waktu tunggu.
+4. Maskapai dapat memperbaiki layanan-layanan yang memiliki kontribusi rendah terhadap kepuasan penumpang. Misalnya layanan *Seat Comfort*, maskapai dapat meningkatkan kenyamanan kursi dengan memberikan kursi yang lebih empuk dan lega.
 
 ## Daftar Pustaka
 
@@ -327,4 +328,4 @@ Dari hasil evaluasi, dapat disimpulkan bahwa model CatBoost memiliki performa ya
 
 [3] Sasongko, S. R. (2021). Faktor-faktor kepuasan pelanggan dan loyalitas pelanggan (literature review manajemen pemasaran). Jurnal ilmu manajemen terapan, 3(1), 104-114.
 
-
+[4] Harjati, L., & Venesia, Y. (2015). [Pengaruh kualitas layanan dan persepsi harga terhadap kepuasan pelanggan pada maskapai penerbangan Tiger Air Mandala](http://download.garuda.kemdikbud.go.id/article.php?article=400299&val=6685&title=PENGARUH%20KUALITAS%20LAYANAN%20DAN%20PERSEPSI%20HARGA%20TERHADAP%20KEPUASAN%20PELANGGAN%20PADA%20MASKAPAI%20PENERBANGAN%20TIGER%20AIR%20MANDALA). E-Journal Widya Ekonomika, 1(1), 36791.
