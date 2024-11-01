@@ -121,10 +121,9 @@ Visualisasi data dapat membantu dalam memahami karakteristik data dan menemukan 
 - Boxplot untuk melihat outlier pada data
 
 Boxplot data latih
-![Outlier data train](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/train_boxplot_outlier.png
-)
+![Outlier data train](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/train_boxplot_outlier.png?raw=true)
  Boxplot data uji
-![Outlier data test](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/test_boxplot_outlier.png)
+![Outlier data test](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/test_boxplot_outlier.png?raw=true)
 
 Boxplot merupakan salah satu metode yang digunakan untuk menampilkan distribusi data berdasarkan kuartil. Pembuatan boxplot didasarkan pada nilai minimum, kuartil bawah (Q1), median (Q2), kuartil atas (Q3), dan nilai maksimum dari data. Boxplot dapat menunjukkan adanya data outlier yang berada di luar batas atas dan batas bawah dari data yang dapat dilihat pada garis berbentuk T pada boxplot.
 
@@ -132,19 +131,19 @@ Boxplot merupakan salah satu metode yang digunakan untuk menampilkan distribusi 
 
 Histogram pada data *Inflight wifi service*, *Inflight entertainment*, *On-Board Service*, dan *Seat comfort* terhadap *flight distance*.
 
-![Histogram flight distance](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/histplot_flight_distance.png)
+![Histogram flight distance](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/histplot_flight_distance.png?raw=true)
 
 Histogram merupakan salah satu metode visualisasi yang digunakan untuk menampilkan distribusi data. Histogram menunjukkan frekuensi kemunculan data pada interval tertentu. Histogram dapat membantu dalam mengetahui distribusi data dan menemukan pola yang terdapat dalam data.
 
 - Heatmap untuk melihat korelasi antar variabel
 
-![heatmap](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/heatmap_correlation.png)
+![heatmap](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/heatmap_correlation.png?raw=true)
 
 Heatmap merupakan metode visualisasi yang paling sering digunakan untuk menampilkan korelasi antar variabel. Di dalam heatmap, korelasi antar variabel ditampilkan dalam bentuk warna. Warna dari heatmap sendiri tergantung kepada nilai korelasi antar variabel tersebut. Pada proyek ini, korelasi yang mendekati 1 hingga 1 menunjukkan hubungan positif dan diberi warna yang semakin gelap terang, sedangkan korelasi yang mendekati -1 hingga -1 menunjukkan hubungan negatif dan diberi warna terang.
 
 - Barplot untuk melihat rata-rata kepuasan penumpang terhadap variabel lainnya
 
-![rata-rata rating](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/plot_avg_rating.png)
+![rata-rata rating](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/plot_avg_rating.png?raw=true)
 
 ## Data Preparation
 
@@ -181,9 +180,9 @@ Penanganan outlier pada data dilakukan dengan metode transformasi data menggunak
 
 $y = log({x})$
 
-![boxplot_train_setelah_transformasi](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/train_boxplot_clean.png)
+![boxplot_train_setelah_transformasi](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/train_boxplot_clean.png?raw=true)
 
-![boxplot_test_setelah_transformasi](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/test_boxplot_clear.png)
+![boxplot_test_setelah_transformasi](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/test_boxplot_clear.png?raw=true)
 
 ### Penanganan Data Kategorikal
 
@@ -211,9 +210,9 @@ Setelah dilakukan encoding, data kategorikal akan diubah menjadi data numerik se
 
 Kelas yang tidak seimbang dapat mempengaruhi performa model machine learning, model akan cenderung memprediksi kelas mayoritas. Oleh karena itu, penyeimbangan kelas perlu dilakukan agar model machine learning dapat memprediksi kelas dengan baik. Terdapat beberapa teknik untuk menyeimbangkan kelas, diantaranya adalah oversampling, undersampling, dan gabungan dari kedua metode tersebut. Pada proyek ini, penyeimbangan kelas dilakukan dengan metode oversampling menggunakan SMOTE (Synthetic Minority Over-sampling Technique).
 
-![imbalance class](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/imbalance_class.png)
+![imbalance class](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/imbalance_class.png?raw=true)
 
-![balance class](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/balance_class.png)
+![balance class](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/balance_class.png?raw=true)
 
 ## Modeling
 
@@ -253,7 +252,7 @@ Nilai dari TP, TN, FP, dan FN dapat dihitung dari confusion matrix. Confusion ma
 
 - Confusion Matrix K-Nearest Neighbors
 
-    ![Confusion Matrix KNN](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/cm_knn.png)
+    ![Confusion Matrix KNN](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/cm_knn.png?raw=true)
 
     Perhitungan:
 
@@ -268,7 +267,7 @@ Nilai dari TP, TN, FP, dan FN dapat dihitung dari confusion matrix. Confusion ma
 
 - Confusion Matrix Random Forest
 
-    ![Confusion Matrix Random Forest](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/cm_rf.png)
+    ![Confusion Matrix Random Forest](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/cm_rf.png?raw=true)
 
     Perhitungan:
 
@@ -283,7 +282,7 @@ Nilai dari TP, TN, FP, dan FN dapat dihitung dari confusion matrix. Confusion ma
 
 - Confusion Matrix CatBoost
 
-    ![Confusion Matrix Catboost](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/cm_cb.png)
+    ![Confusion Matrix Catboost](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/cm_cb.png?raw=true)
 
     Perhitungan:
 
@@ -309,7 +308,7 @@ Jika berdasarkan classification report, maka dihasilkan nilai sebagai berikut:
 
 Dari hasil pemodelan, dapat disimpulkan bahwa model CatBoost memiliki performa yang paling baik dibandingkan dengan model K-Nearest Neighbors dan Random Forest. CatBoost juga merupakan model yang fleksibel dan dapat menangani data kategorikal tanpa perlu encoding. Model tersebut melakukan konversi data kategorikal menjadi data numerik secara otomatis menggunakan algoritma novel yang membantu dalam mengurangi overfitting. Selain itu, model CatBoost mengimplementasikan mekanisme boosting, yaitu teknik mengatasi masalah overfitting dengan mengacak urutan data pada setiap iterasi pelatihan, sehingga model tidak akan terlalu fokus pada data yang sama[2]. Hal ini membuat model CatBoost cocok untuk digunakan dalam memprediksi kepuasan penumpang dengan tepat meskipun data yang diperoleh sangat besar dan beragam.
 
-![important_feature](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/important_feature.png)
+![important_feature](https://github.com/Dzoel31/Project-Predictive-Analytics-Dicoding/blob/main/assets/important_feature.png?raw=true)
 
 Merujuk kepada gambar di atas, fitur-fitur yang menjadi penentu kepuasan penumpang adalah *Inflight wifi service*, *Type of Travel*, *Online Boarding*, dan *Customer Type*. Perusahaan maskapai dapat memperhatikan fitur-fitur tersebut untuk mempertahankan atau meningkatkan kepuasan pelanggan. Selain itu, perusahaan dapat memberikan perbaikan pada fitur-fitur lain yang memiliki kontribusi rendah terhadap kepuasan penumpang.
 
